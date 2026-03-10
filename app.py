@@ -15,7 +15,10 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-MODEL_PATH = r"C:\Users\akhat\Documents\sap-project\runs\detect\train\weights\best.pt"
+BASE_DIR = Path(__file__).parent
+MODEL_PATH = BASE_DIR / "models" / "best.pt"
+
+@st.cache_resource
 
 CLASS_NAMES = [
     'Green Light', 'Red Light', 'Speed Limit 10', 'Speed Limit 100',
@@ -1059,4 +1062,5 @@ if source_mode == "video" and st.session_state.vid_running:
         count_ph.empty()
         st.session_state.vid_running  = False
         st.session_state.vid_tmp_path = ""
+
         st.rerun()
