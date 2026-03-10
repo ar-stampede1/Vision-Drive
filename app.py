@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 BASE_DIR = Path(__file__).parent
-MODEL_PATH = BASE_DIR / "models" / "best.pt"
+MODEL_PATH = BASE_DIR / "model" / "best.pt"
 
 @st.cache_resource
 
@@ -1064,3 +1064,4 @@ if source_mode == "video" and st.session_state.vid_running:
         st.session_state.vid_tmp_path = ""
 
         st.rerun()
+
